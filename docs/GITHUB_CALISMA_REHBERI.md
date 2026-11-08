@@ -31,10 +31,10 @@ GitHub Desktop → **Current Branch → New Branch** → isim:
 ## 3. Çalışma döngüsü
 
 1. Başlamadan önce: **Fetch origin** → main'deki son değişiklikleri almak için **Branch → Update from main**.
-2. Sadece **kendi klasörünüzdeki** dosyaları değiştirin (bkz. `src/tetris/<paketiniz>/GOREV.md`).
+2. Sadece **size ait dosyaları / bölümleri** değiştirin (bkz. `docs/gorevler/<Adınız>.md` ve `docs/ORTAK_DOSYALAR.md`).
 3. Bir parça bitince GitHub Desktop'ta sol altta kısa bir açıklama yazın → **Commit**.
 4. **Push origin** ile GitHub'a gönderin.
-5. `GOREV.md` içindeki bitirdiğiniz maddeleri `- [x]` olarak işaretleyin.
+5. `docs/gorevler/<Adınız>.md` içindeki bitirdiğiniz maddeleri `- [x]` olarak işaretleyin.
 
 ## 4. Birleştirme (Pull Request)
 
@@ -50,10 +50,10 @@ Birleştirme sırası için: [BIRLESTIRME_PLANI.md](BIRLESTIRME_PLANI.md)
 
 - Repo sayfasında **Commits**: kim ne zaman ne yaptı.
 - **Pull requests**: birleştirilmeyi bekleyen işler.
-- Her paketteki `GOREV.md`: işaretlenmiş görevler.
+- `docs/gorevler/` içindeki kişi dosyaları: işaretlenmiş görevler.
 
 ## Kurallar
 
-- Başkasının klasöründeki dosyayı değiştirmeden önce ona haber verin.
+- Başkasının dosyasını veya ortak dosyadaki başkasının bölümünü değiştirmeden önce ona haber verin.
 - Çalışmayan (derlenmeyen) kodu main'e birleştirmeyin.
 - Sık sık commit + push yapın, işi biriktirmeyin.

@@ -1,47 +1,58 @@
 # Tetris Oyunu — Java Proje Ödevi
 
-Java Swing ile yazılacak Tetris oyunu. 10 videoluk oynatma listesi takip edilerek ekip halinde geliştirilecek.
+Java Swing ile yazılacak Tetris oyunu. **"Tetris Game with Java Swing"** video serisi (10 video) takip edilerek ekip halinde geliştirilecek.
+Dosya ve sınıf adları videodaki projeyle aynı tutuldu, böylece herkes videoyu izlerken kendi dosyasını kolayca bulur.
+
+📺 Oynatma listesi: https://www.youtube.com/playlist?list=PL8wKnrrMApCoP9xTwOmQRHsZ8_Kr9c_DY
+
+**➡️ İlk önce okuyun: [docs/GITHUB_CALISMA_REHBERI.md](docs/GITHUB_CALISMA_REHBERI.md)**
+**⚠️ Ortak dosya kuralları: [docs/ORTAK_DOSYALAR.md](docs/ORTAK_DOSYALAR.md)**
 
 ## Klasör Yapısı
 
 ```
 TetrisOyunu/
-├── .vscode/                 → VS Code Java ayarları
-├── src/tetris/
-│   ├── Main.java            → Programın giriş noktası (ORTAK)
-│   ├── ui/                  → 👤 Emir    — Oyun arayüzü
-│   ├── blocks/              → 👤 Enes    — Bloklar ve yeni blok üretimi
-│   │   └── shapes/          →            7 blok türü (I, J, L, O, S, T, Z)
-│   ├── controls/            → 👤 Ceren   — Hareket ve klavye kontrolleri
-│   ├── board/               → 👤 Melisa  — Satır temizleme ve puanlama
-│   ├── leaderboard/         → 👤 Görkem  — Skor tablosu ve kayıt
-│   └── audio/               → 👤 Görkem  — Sesler
-├── resources/sounds/        → Ses dosyaları (Görkem)
-├── data/                    → Kaydedilen skor dosyası (Görkem)
-├── dist/                    → Çalıştırılabilir JAR çıktısı (Görkem)
-├── lib/                     → Harici kütüphaneler (gerekirse)
-└── docs/                    → Görev dağılımı, videolar, birleştirme planı
+├── src/
+│   ├── tetris/
+│   │   ├── Tetris.java           → Ana sınıf (main)             ORTAK: Emir + Görkem
+│   │   ├── GameForm.java         → Oyun penceresi               Emir (+ Ceren: klavye)
+│   │   ├── GameArea.java         → Izgara + oyun mantığı        ORTAK: Emir, Enes, Ceren, Melisa
+│   │   ├── GameThread.java       → Otomatik aşağı inme döngüsü  Ceren
+│   │   ├── TetrisBlock.java      → Blok yapısı                  Enes
+│   │   ├── StartupForm.java      → Giriş menüsü (START)         Emir
+│   │   ├── LeaderboardForm.java  → Skor tablosu + kayıt         Görkem
+│   │   └── AudioPlayer.java      → Sesler                       Görkem
+│   └── tetrisblocks/             → 7 blok türü (I J L O S T Z)  Enes
+├── resources/sounds/             → Ses dosyaları                Görkem
+├── data/                         → Skor kayıt dosyası           Görkem
+├── dist/                         → Çalıştırılabilir JAR         Görkem
+├── lib/                          → Harici kütüphaneler (gerekirse)
+└── docs/
+    ├── gorevler/                 → Kişi başı görev listeleri (Emir.md, Enes.md, ...)
+    ├── GOREV_DAGILIMI.md
+    ├── BIRLESTIRME_PLANI.md
+    ├── ORTAK_DOSYALAR.md
+    ├── VIDEOLAR.md
+    └── GITHUB_CALISMA_REHBERI.md
 ```
-
-Her paketin içinde o kişinin görevlerini anlatan bir **GOREV.md** dosyası var.
 
 ## Ekip ve Görevler
 
-| Kişi | Paket | Videolar | Kısaca Görev |
-|------|-------|----------|--------------|
-| Emir   | `ui`                   | 1             | Oyun penceresi, ızgara, puan/seviye/sıradaki blok alanları, START/RESET |
-| Enes   | `blocks`               | 3, 6          | Blok şekil/renk/konum, 7 blok türü, rastgele blok, yeni blok gelmesi |
-| Ceren  | `controls`             | 2, 4          | Otomatik düşme, sağ-sol, döndürme, hızlı indirme, çarpışma kontrolü |
-| Melisa | `board`                | 5 (+3 destek) | Yerleşmiş bloklar, satır temizleme, puan, oyun sonu |
-| Görkem | `leaderboard`, `audio` | 7, 8, 9       | Skor tablosu, dosyaya kayıt/yükleme, sesler, JAR paketleme |
-| Herkes | —                      | 10            | Son testler, hata düzeltme, sunum |
+| Kişi | Videolar | Dosyalar | Görev listesi |
+|------|----------|----------|---------------|
+| Emir   | 1             | `GameForm`, `StartupForm`, `Tetris`*, `GameArea`*      | [Emir.md](docs/gorevler/Emir.md) |
+| Enes   | 3, 6          | `TetrisBlock`, `tetrisblocks/*`, `GameArea`*           | [Enes.md](docs/gorevler/Enes.md) |
+| Ceren  | 2, 4          | `GameThread`, `GameArea`*, `GameForm`*                 | [Ceren.md](docs/gorevler/Ceren.md) |
+| Melisa | 5 (+3 destek) | `GameArea`*, `GameThread`*                             | [Melisa.md](docs/gorevler/Melisa.md) |
+| Görkem | 7, 8, 9       | `LeaderboardForm`, `AudioPlayer`, `Tetris`*            | [Gorkem.md](docs/gorevler/Gorkem.md) |
+| Herkes | 10            | Son testler, hata düzeltme, sunum                      | |
 
-**➡️ Ekip olarak nasıl çalışacağız: [docs/GITHUB_CALISMA_REHBERI.md](docs/GITHUB_CALISMA_REHBERI.md)**
-
-Detaylar: [docs/GOREV_DAGILIMI.md](docs/GOREV_DAGILIMI.md) · [docs/BIRLESTIRME_PLANI.md](docs/BIRLESTIRME_PLANI.md) · [docs/VIDEOLAR.md](docs/VIDEOLAR.md)
+\* Ortak dosya — [ORTAK_DOSYALAR.md](docs/ORTAK_DOSYALAR.md) kurallarına uyun.
 
 ## Çalıştırma (VS Code)
 
 1. VS Code'a **Extension Pack for Java** eklentisini kurun.
 2. `TetrisOyunu` klasörünü VS Code ile açın.
-3. `src/tetris/Main.java` dosyasını açıp **Run** deyin.
+3. `src/tetris/Tetris.java` dosyasını açıp **Run** deyin.
+
+> **Not:** Videoda pencereler (GameForm, StartupForm, LeaderboardForm) NetBeans'in sürükle-bırak tasarım aracıyla yapılıyorsa, VS Code'da bu araç yok. O kısımlarda düğme/yazı gibi öğeleri kodla eklemek gerekecek; mantık kısmı (GameArea, GameThread, TetrisBlock) videodakiyle aynı yazılabilir.

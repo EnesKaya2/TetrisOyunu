@@ -1,6 +1,7 @@
 /*
  * Sorumlu : Enes
- * Görev   : Rastgele blok seçimi, yeni blok üretimi ve sıradaki blok bilgisi.
+ * Video   : 6
+ * Görev   : T şeklindeki blok türü (TetrisBlock sınıfından türeyecek).
  *
  * NOT: Bu dosya şimdilik boş bırakıldı. Kod sorumlu kişi tarafından yazılacak.
  */

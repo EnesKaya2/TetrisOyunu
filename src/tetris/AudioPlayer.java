@@ -1,6 +1,7 @@
 /*
  * Sorumlu : Görkem
- * Görev   : Skorları data/ klasöründeki dosyaya kaydetme ve yükleme.
+ * Video   : 9
+ * Görev   : Ses dosyalarını çalma: satır temizleme sesi, oyun bitti sesi vb.
  *
  * NOT: Bu dosya şimdilik boş bırakıldı. Kod sorumlu kişi tarafından yazılacak.
  */

@@ -1,6 +1,7 @@
 /*
  * Sorumlu : Enes
- * Görev   : L şeklindeki blok türü.
+ * Video   : 6
+ * Görev   : L şeklindeki blok türü (TetrisBlock sınıfından türeyecek).
  *
  * NOT: Bu dosya şimdilik boş bırakıldı. Kod sorumlu kişi tarafından yazılacak.
  */
