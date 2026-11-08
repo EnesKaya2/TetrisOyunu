@@ -36,6 +36,8 @@ Her paketin içinde o kişinin görevlerini anlatan bir **GOREV.md** dosyası va
 | Görkem | `leaderboard`, `audio` | 7, 8, 9       | Skor tablosu, dosyaya kayıt/yükleme, sesler, JAR paketleme |
 | Herkes | —                      | 10            | Son testler, hata düzeltme, sunum |
 
+**➡️ Ekip olarak nasıl çalışacağız: [docs/GITHUB_CALISMA_REHBERI.md](docs/GITHUB_CALISMA_REHBERI.md)**
+
 Detaylar: [docs/GOREV_DAGILIMI.md](docs/GOREV_DAGILIMI.md) · [docs/BIRLESTIRME_PLANI.md](docs/BIRLESTIRME_PLANI.md) · [docs/VIDEOLAR.md](docs/VIDEOLAR.md)
 
 ## Çalıştırma (VS Code)
